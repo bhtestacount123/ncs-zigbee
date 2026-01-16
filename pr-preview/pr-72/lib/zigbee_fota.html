@@ -211,14 +211,14 @@ When using the Zigbee FOTA library, this endpoint ID cannot be used for other en
 <li><p>It is required to use external flash to enable the Zigbee FOTA library.</p></li>
 <li><p>By default, only the full upgrades (to both application and network core) are allowed.
 Disable the <code class="docutils literal notranslate"><span class="pre">CONFIG_NRF53_ENFORCE_IMAGE_VERSION_EQUALITY</span></code> Kconfig option to build update images without inter-dependencies so that they can be applied independently.</p></li>
-<li><p>It is impossible to enable <code class="docutils literal notranslate"><span class="pre">SB_CONFIG_MCUBOOT_MODE_SWAP_WITHOUT_SCRATCH</span></code> Kconfig option.
+<li><p>It is not possible to modify the value of the <code class="docutils literal notranslate"><span class="pre">SB_CONFIG_MCUBOOT_MODE_SWAP_WITHOUT_SCRATCH</span></code> Kconfig option.
 As a result, the fallback recovery is not available and any valid upgrade will overwrite the previous image.
 The call to the <code class="xref c c-func docutils literal notranslate"><span class="pre">boot_write_img_confirmed()</span></code> will have no effect.</p></li>
 <li><p>The current DFU limitations and dependencies are enforced by the <code class="docutils literal notranslate"><span class="pre">CONFIG_NRF53_MULTI_IMAGE_UPDATE</span></code> Kconfig option.</p></li>
 <li><p>The version of the network core image is always set to the same value as the application core image.
 Its value can be configured using the <code class="docutils literal notranslate"><span class="pre">CONFIG_MCUBOOT_IMGTOOL_SIGN_VERSION</span></code> Kconfig option.</p></li>
 <li><p>The MCUboot header is not stored inside the network core flash memory.
-As a result, it is impossible to read the version of the currently running network core image.</p></li>
+As a result, it is not possible to read the version of the currently running network core image.</p></li>
 </ul>
 </section>
 <section id="api-documentation">
